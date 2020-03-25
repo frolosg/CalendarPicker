@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import { Utils } from './Utils';
 import Controls from './Controls';
+import IMAGE_DATA from '../../../src/components/utils/ImageUtils'
 
 function isSameMonthAndYear(date, month, year) {
   if (date) {
@@ -54,18 +55,21 @@ export default function HeaderControls(props) {
       <Controls
         disabled={disablePreviousMonth}
         label={previous}
+        icon={IMAGE_DATA.previousMonth}
         onPressControl={onPressPrevious}
         styles={[styles.monthSelector, styles.prev]}
         textStyles={[textStyle, previousTitleStyle]}
       />
       <View>
         <Text style={[styles.monthLabel, textStyle]} {...accessibilityProps}>
-           { month } { year }
+           { month }
+            {/* { year } */}
         </Text>
       </View>
       <Controls
         disabled={disableNextMonth}
         label={next}
+        icon={IMAGE_DATA.nextMonth}
         onPressControl={onPressNext}
         styles={[styles.monthSelector, styles.next]}
         textStyles={[textStyle, nextTitleStyle]}
