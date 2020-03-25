@@ -12,7 +12,7 @@ function getBorderRadiusByShape(scaler, dayShape) {
   if (dayShape === 'square') {
     return 0;
   } else {
-    return 30*scaler;
+    return 30 * scaler;
   }
 }
 
@@ -23,24 +23,27 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
 
   return {
     calendar: {
-      height: 320*scaler,
-      marginTop: 10*scaler
+      height: 320 * scaler,
+      marginTop: 10 * scaler
     },
 
     dayButton: {
-      width: 30*scaler,
-      height: 30*scaler,
+      width: 30 * scaler,
+      height: 30 * scaler,
       borderRadius: getBorderRadiusByShape(scaler, dayShape),
       alignSelf: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
 
     dayLabel: {
-      fontSize: 14*scaler,
-      color: '#000',
+      fontSize: 14 * scaler,
+      color: '#272727',
       alignSelf: 'center'
     },
 
+    selectedTodayDayLabel: {
+      color: '#000'
+    },
     selectedDayLabel: {
       color: SELECTED_TEXT_COLOR,
     },
@@ -49,8 +52,8 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
       flexDirection: 'row',
       borderBottomWidth: 1,
       borderTopWidth: 1,
-      paddingTop: 10*scaler,
-      paddingBottom: 10*scaler,
+      paddingTop: 10 * scaler,
+      paddingBottom: 10 * scaler,
       alignSelf: 'center',
       justifyContent: 'center',
       backgroundColor: 'rgba(0,0,0,0.0)',
@@ -63,18 +66,20 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     },
 
     dayLabels: {
-      width: 50*scaler,
-      fontSize: 12*scaler,
-      color: '#000',
+      width: 50 * scaler,
+      fontSize: 12 * scaler,
+      color: '#707070',
+      fontFamily: 'GTWalsheim-Bold',
       textAlign: 'center'
     },
 
     selectedDay: {
-      width: 30*scaler,
-      height:30*scaler,
+      width: 30 * scaler,
+      height: 30 * scaler,
       borderRadius: getBorderRadiusByShape(scaler, dayShape),
       alignSelf: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      backgroundColor: '#707070',
     },
 
     selectedDayBackground: {
@@ -82,10 +87,12 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     },
 
     selectedToday: {
-      width: 30*scaler,
-      height:30*scaler,
-      backgroundColor: TODAY_BG_COLOR,
-      borderRadius: getBorderRadiusByShape(scaler, dayShape),
+      width: 30 * scaler,
+      height: 30 * scaler,
+      borderRadius: 30 * scaler,
+      backgroundColor: '#fff',
+      borderWidth: 1,
+      borderColor: '#000',
       alignSelf: 'center',
       justifyContent: 'center'
     },
@@ -93,44 +100,43 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     dayWrapper: {
       alignItems: 'center',
       justifyContent: 'center',
-      width: 50*scaler,
-      height: 40*scaler,
-      backgroundColor: 'rgba(0,0,0,0.0)'
+      width: 50 * scaler,
+      height: 40 * scaler,
+
     },
 
     startDayWrapper: {
-      width: 50*scaler,
-      height: 30*scaler,
-      borderTopLeftRadius: 20*scaler,
-      borderBottomLeftRadius: 20*scaler,
-      backgroundColor: SELECTED_BG_COLOR,
+      width: 40 * scaler,
+      height: 40 * scaler,
+      borderRadius: 20 * scaler,
+      backgroundColor: '#000',
       alignSelf: 'center',
       justifyContent: 'center'
     },
 
     endDayWrapper: {
-      width: 50*scaler,
-      height: 30*scaler,
-      borderTopRightRadius: 20*scaler,
-      borderBottomRightRadius: 20*scaler,
-      backgroundColor: SELECTED_BG_COLOR,
+      width: 40 * scaler,
+      height: 40 * scaler,
+      borderRadius: 20 * scaler,
+      backgroundColor: '#000',
       alignSelf: 'center',
       justifyContent: 'center'
     },
 
     inRangeDay: {
-      width: 50*scaler,
-      height: 30*scaler,
+      width: 50 * scaler,
+      height: 30 * scaler,
       backgroundColor: SELECTED_BG_COLOR,
       alignSelf: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
 
     monthLabel: {
-      fontSize: 16*scaler,
+      fontSize: 24 * scaler,
       color: '#000',
-      marginBottom: 10*scaler,
-      width: 180*scaler,
+      fontFamily: 'GTWalsheim-Bold',
+      marginBottom: 10 * scaler,
+      width: 260 * scaler,
       textAlign: 'center'
     },
 
@@ -138,15 +144,16 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
       alignItems: 'center',
       flexDirection: 'row',
       alignSelf: 'center',
-      padding: 5*scaler,
-      paddingBottom: 3*scaler,
+      padding: 5 * scaler,
+      paddingBottom: 3 * scaler,
       backgroundColor: 'rgba(0,0,0,0.0)'
     },
 
     monthSelector: {
-      marginBottom: 10*scaler,
-      fontSize: 14*scaler,
-      width: 80*scaler
+      marginBottom: 10 * scaler,
+      fontSize: 14 * scaler,
+      width:20,
+      // backgroundColor:'#000',
     },
 
     prev: {
@@ -158,7 +165,7 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     },
 
     yearLabel: {
-      fontSize: 14*scaler,
+      fontSize: 14 * scaler,
       fontWeight: 'bold',
       color: '#000',
       textAlign: 'center'
@@ -169,11 +176,11 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     },
 
     weekRow: {
-      flexDirection: 'row'
+      flexDirection: 'row',
     },
 
     disabledText: {
-      fontSize: 14*scaler,
+      fontSize: 14 * scaler,
       color: '#BBBBBB',
       alignSelf: 'center',
       justifyContent: 'center'
