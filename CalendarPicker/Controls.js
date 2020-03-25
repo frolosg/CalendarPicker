@@ -1,20 +1,24 @@
 import React from 'react';
 import {
   TouchableOpacity,
-  Text,
+  Text, Image
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default function Controls({ styles, textStyles, label, onPressControl, disabled }) {
+export default function Controls({ styles, textStyles, label, onPressControl, disabled, icon }) {
   return (
     <TouchableOpacity
       onPress={() => onPressControl()}
       disabled={disabled}
       hitSlop={{ top: 20, bottom: 20, left: 50, right: 50 }}
     >
-      <Text style={[styles, textStyles]}>
+      {/* <Text style={[styles, textStyles]}>
         { disabled ? null : label }
-      </Text>
+      </Text> */}
+      <Image
+        style={[styles, textStyles]}
+        source={  disabled ? null :  icon}
+      />
     </TouchableOpacity>
   );
 }
