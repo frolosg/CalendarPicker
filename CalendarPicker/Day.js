@@ -98,7 +98,7 @@ export default function Day(props) {
     if (isToday) {
       daySelectedStyle = styles.selectedToday;
       // todayTextStyle prop overrides selectedDayTextColor (created via makeStyles)
-      selectedDayColorStyle = todayTextStyle || styles.selectedDayLabel;
+      selectedDayColorStyle = todayTextStyle || styles.selectedTodayDayLabel;
     }
 
     for (let cds of customDatesStyles) {
@@ -167,7 +167,7 @@ export default function Day(props) {
       <View style={[styles.dayWrapper, customContainerStyle]}>
         <TouchableOpacity
           disabled={!enableDateChange}
-          style={[customDateStyle, daySelectedStyle, propSelectedDayStyle ]}
+          style={[customDateStyle, daySelectedStyle, propSelectedDayStyle]}
           onPress={() => onPressDay(day) }>
           <Text style={[styles.dayLabel, textStyle, customTextStyle, selectedDayColorStyle]}>
             { day }
