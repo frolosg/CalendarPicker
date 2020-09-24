@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import { Utils } from './Utils';
 import Controls from './Controls';
-import IMAGE_DATA from '../../../src/components/utils/ImageUtils'
+import {IMAGE_DATA} from '../../../src/components/utils/ImageUtils'
 
 function isSameMonthAndYear(date, month, year) {
   if (date) {
